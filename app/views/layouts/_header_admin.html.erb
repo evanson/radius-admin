@@ -1,0 +1,59 @@
+                            <li id="fat-menu" class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    Students <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><%= link_to "New student", new_student_path %></li>
+                                   <li class="divider"></li>
+                                    <li><%= link_to "Current students", students_path %></li>
+                                </ul>
+                            </li>
+                            <li id="fat-menu" class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    Instructors <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><%= link_to "New instructor", new_instructor_path %></li>
+                                   <li class="divider"></li>
+                                    <li><%= link_to "Current instructors", instructors_path %></li>
+                                </ul>
+                            </li>
+                            <li id="fat-menu" class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    Center Management <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><%= link_to "New center", new_center_path %></li>
+                                   <li class="divider"></li>
+                                    <li><%= link_to "Current centers", centers_path %></li>
+                                   <li class="divider"></li>
+                                    <li><%= link_to "School Days", school_days_path %></li>
+                                   <li class="divider"></li>
+                                    <li><%= link_to "Subjects", subjects_path %></li>
+
+                                </ul>
+                            </li>
+                            <li id="fat-menu" class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    Admins <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><%= link_to "New admin", new_admin_path %></li>
+                                   <li class="divider"></li>
+                                    <li><%= link_to "Current admins", admins_path %></li>
+                                </ul>
+                            </li>
+
+                            <li id="fat-menu" class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    Account <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><%= link_to "Profile", current_user %></li>
+                                    <li><%= link_to "Settings", eval("edit_#{current_user.type.to_s.downcase}_path(current_user)") %></li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <%= link_to "Sign out", signout_path, method: "delete"  %>
+                                    </li>
+                                </ul>
+                            </li>

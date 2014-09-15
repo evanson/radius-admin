@@ -1,0 +1,42 @@
+<div class="row">
+<div class="span6 offset3">
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+        <div class="alert alert-error">
+      <%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:
+       </div>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+    <%= f.label :firstname %>
+    <%= f.text_field :firstname %>
+  
+  
+    <%= f.label :lastname %>
+    <%= f.text_field :lastname %>
+  
+  
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  
+  
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  
+  
+    </br>
+    <%= f.submit class: "btn btn-large btn-primary" %>
+  
+<% end %>
+</div>
+</div>

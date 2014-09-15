@@ -1,0 +1,15 @@
+<header class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <nav>
+                <ul class="nav pull-right">
+                        <% if signed_in? %>
+                            <li><%= link_to "Home", root_path %></li>
+                        <% else %>                            
+                            <li><%= link_to "Sign in", signin_path %></li>
+                        <% end %>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

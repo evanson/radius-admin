@@ -1,0 +1,16 @@
+<%= form_for(:session, url: sessions_path) do |f| %>
+<div class="row">
+<div class="span6 offset3">
+  <% if flash[:error] %>
+    <h3 class="alert alert-error"><%= flash[:error] %></h3>
+  <% end %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>    
+ 
+    <%= f.label :password %>
+    <%= f.password_field :password %>    
+    </br>
+    <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+<% end %>
+</div>
+</div>

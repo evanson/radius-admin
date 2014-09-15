@@ -1,0 +1,26 @@
+<% if flash[:error] %>
+    <h3 class="alert alert-error"><%= flash[:error] %></h3>
+  <% end %>
+<% if notice %>
+    <h3 class="alert alert-success"><%= notice %></h3>
+<% end %>
+<div class="row">
+<p>
+  <strong>Firstname:</strong>
+  <%= @user.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @user.lastname %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+<p>
+  <strong>Status:</strong>
+  <%= @user.status %>
+</p>
+</div>

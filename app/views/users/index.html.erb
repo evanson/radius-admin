@@ -1,0 +1,28 @@
+<h2><%= @user_type.to_s.pluralize.capitalize %></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.firstname %></td>
+        <td><%= user.lastname %></td>
+        <td><%= user.email %></td>
+        <td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate %>
+<br><br><br>
+

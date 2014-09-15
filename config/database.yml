@@ -5,8 +5,8 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: mysql
-  encoding: unicode
+  adapter: mysql2
+  #encoding: unicode
   database: radius
   pool: 5
   username: radius

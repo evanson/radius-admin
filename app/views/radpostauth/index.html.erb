@@ -1,12 +1,14 @@
 <h2>Radius Logins</h2>
 
-<table>
+<table class="table table-striped table-bordered table-hover table-condensed">
   <thead>
     <tr>
       <th>Username</th>
       <th>Password</th>
       <th>Auth status</th>
       <th>Login time</th>
+      <th>NAS IP Address</th>
+      <th>NAS Port</th>
     </tr>
   </thead>
 
@@ -17,6 +19,8 @@
         <th><%= radpostauth.pass %></th>
         <td><%= radpostauth.reply %></td>
         <td><%= radpostauth.authdate %></td>
+        <td><%= radpostauth.nasip %></td>
+        <td><%= radpostauth.nasport %></td>
       </tr>
     <% end %>
   </tbody>

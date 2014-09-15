@@ -9,7 +9,11 @@
                                     Dashboard <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><%= link_to "Login attempts", root_path %></li>
+                                    <li><%= link_to "Login attempts",
+                                    root_path %></li>
+                                   <li class="divider">
+                                    <li><%= link_to "Logins today",
+                                    today_path %></li>
                                    <li class="divider"></li>
                                     <li><%= link_to "Accounting", root_path %></li>
                                 </ul>

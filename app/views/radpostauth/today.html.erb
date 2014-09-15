@@ -1,0 +1,68 @@
+<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+
+    <script>
+        $(function () {
+            var chart;
+            $(document).ready(function () {
+                chart = new Highcharts.Chart({
+                    chart:{
+                        renderTo:'container',
+                        type:'column'
+                    },
+                    title:{
+                        text:'<%= Date.today.strftime("%B %d, %Y") %> Radius server authenticated logins'
+                    },
+                    xAxis:{
+                        categories:[
+
+                            'Time of day'
+
+                        ]
+                    }, 
+                    yAxis:{
+                        min:0,
+                        title:{
+                            text:'Number of logins'
+                        }
+                    },
+                    legend:{
+                        layout:'vertical',
+                        backgroundColor:'#FFFFFF',
+                        align:'left',
+                        verticalAlign:'top',
+                        x:100,
+                        y:70,
+                        floating:true,
+                        shadow:true
+                    },
+                    tooltip:{
+                        formatter:function () {
+                            return '' ;
+                        },
+
+                        credits:{
+                            text:'SomeText.co.uk',
+                            hreft:'http://wwww.putyourlinkhere.co.uk'
+                        }
+                    },
+                    plotOptions:{
+                        column:{
+                            pointPadding:0.4,
+                            borderWidth:0
+                        }
+                    },
+
+
+                    series:[
+                        <%@counts.each do |count|%>
+                        {
+                            name:'<%= count[0] %>:00',
+                            data:[<%= count[1] %>]
+                        },
+                        <% end %>
+                    ]
+                });
+            });
+
+        });
+    </script>

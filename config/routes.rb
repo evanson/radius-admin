@@ -13,5 +13,5 @@ Rails.application.routes.draw do
 
   match '/signin', to: 'sessions#new', via: :get
   match '/signout', to: 'sessions#destroy', via: [:delete, :get]
-
+  match '/today', to: 'radpostauth#today', via: [:get]
 end

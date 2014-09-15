@@ -31,7 +31,6 @@ gem 'spring',        group: :development
 
 # Use unicorn as the app server
 # gem 'unicorn'
-gem 'cancan'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -50,3 +49,4 @@ gem 'cancan'
 
 gem 'mysql2'
 gem 'jquery-turbolinks'
+gem "highcharts-rails", "~> 3.0.0"

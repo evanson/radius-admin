@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140915094504) do
+ActiveRecord::Schema.define(version: 20140915095716) do
 
   create_table "nas", force: true do |t|
     t.string  "nasname",     limit: 128,                           null: false
@@ -95,6 +95,15 @@ ActiveRecord::Schema.define(version: 20140915094504) do
     t.string    "pass",     limit: 64, default: "", null: false
     t.string    "reply",    limit: 32, default: "", null: false
     t.timestamp "authdate",                         null: false
+  end
+
+  create_table "radpostauths", force: true do |t|
+    t.string   "username"
+    t.string   "pass"
+    t.string   "reply"
+    t.datetime "authdate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "radreply", force: true do |t|

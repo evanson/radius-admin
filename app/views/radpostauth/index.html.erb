@@ -1,0 +1,25 @@
+<h2>Radius Logins</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Auth status</th>
+      <th>Login time</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @radpostauths.each do |radpostauth| %>
+      <tr>
+        <td><%= radpostauth.username %></td>
+        <th><%= radpostauth.pass %></th>
+        <td><%= radpostauth.reply %></td>
+        <td><%= radpostauth.authdate %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @radpostauths %>
+<br><br><br>

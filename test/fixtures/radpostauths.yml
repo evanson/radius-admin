@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  pass: MyString
+  reply: MyString
+  authdate: 2014-09-15 12:57:16
+
+two:
+  username: MyString
+  pass: MyString
+  reply: MyString
+  authdate: 2014-09-15 12:57:16

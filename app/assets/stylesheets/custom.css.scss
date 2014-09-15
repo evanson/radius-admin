@@ -219,7 +219,8 @@ div.body {
 }
 
 div.body table {
-    box-shadow: 10px 10px 5px #888;
+    /*box-shadow: 10px 10px 5px #888;*/
+    border: 1px solid black;
 }
 
 div.body table thead {
@@ -239,15 +240,9 @@ div.body table thead th .current {
     background-position: right center;
 }
 
-div.body table thead th .asc {
-    background-image: url(../images/up_arrow.gif)
+div.body table tbody tr {
+    background-color: #FFF4A8;
 }
-
-div.body table thead th .desc {
-    background-image: url(../images/down_arrow.gif)
-}
-
-div.body table tbody tr {}
 
 div.body table tbody tr:nth-of-type( 2n ) {
 	background-color: #E5E5FF;
@@ -255,7 +250,7 @@ div.body table tbody tr:nth-of-type( 2n ) {
 }
 
 div.body table tbody tr:hover {
-	background-color: #FFF4A8;
+	background-color: #FFFFFF;
 
 }
 

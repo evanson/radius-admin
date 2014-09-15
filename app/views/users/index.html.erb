@@ -1,4 +1,4 @@
-<h2><%= @user_type.to_s.pluralize.capitalize %></h2>
+<h2>Users</h2>
 
 <table>
   <thead>
@@ -6,9 +6,6 @@
       <th>Firstname</th>
       <th>Lastname</th>
       <th>Email</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -18,7 +15,6 @@
         <td><%= user.firstname %></td>
         <td><%= user.lastname %></td>
         <td><%= user.email %></td>
-        <td>
       </tr>
     <% end %>
   </tbody>

@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
 
   def new
     if signed_in?
-      redirect_to root_path
+      redirect_to radiuslogins_path
     end
   end
 
@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       # Sign in user
       sign_in user
+      redirect_to radiuslogins_path
     else
       # Rerender signin form
       flash[:error] = "Invalid email/password combination"

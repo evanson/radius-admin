@@ -1,0 +1,2 @@
+module RadchecksHelper
+end

@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140915094504) do
+ActiveRecord::Schema.define(version: 20140916055010) do
+
+  create_table "nas", force: true do |t|
+    t.string  "nasname",     limit: 128,                           null: false
+    t.string  "shortname",   limit: 32
+    t.string  "type",        limit: 30,  default: "other"
+    t.integer "ports"
+    t.string  "secret",      limit: 60,  default: "secret",        null: false
+    t.string  "server",      limit: 64
+    t.string  "community",   limit: 50
+    t.string  "description", limit: 200, default: "RADIUS Client"
+  end
+
+  add_index "nas", ["nasname"], name: "nasname", using: :btree
 
   create_table "radacct", primary_key: "radacctid", force: true do |t|
     t.string   "acctsessionid",        limit: 64, default: "", null: false
@@ -45,7 +58,7 @@ ActiveRecord::Schema.define(version: 20140915094504) do
   add_index "radacct", ["acctsessiontime"], name: "acctsessiontime", using: :btree
   add_index "radacct", ["acctstarttime"], name: "acctstarttime", using: :btree
   add_index "radacct", ["acctstoptime"], name: "acctstoptime", using: :btree
-  add_index "radacct", ["acctuniqueid"], name: "acctuniqueid", unique: true, using: :btree
+  add_index "radacct", ["acctuniqueid"], name: "acctuniqueid", using: :btree
   add_index "radacct", ["framedipaddress"], name: "framedipaddress", using: :btree
   add_index "radacct", ["nasipaddress"], name: "nasipaddress", using: :btree
   add_index "radacct", ["username"], name: "username", using: :btree
@@ -58,6 +71,11 @@ ActiveRecord::Schema.define(version: 20140915094504) do
   end
 
   add_index "radcheck", ["username"], name: "username", length: {"username"=>32}, using: :btree
+
+  create_table "radchecks", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "radgroupcheck", force: true do |t|
     t.string "groupname", limit: 64,  default: "",   null: false

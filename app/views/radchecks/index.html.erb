@@ -1,0 +1,27 @@
+<h1>Radius Users</h1>
+
+<table class="table table-striped table-bordered table-hover table-condensed">
+  <thead>
+    <tr>
+       <th>Username</th>
+       <th>Attribute</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @radchecks.each do |radcheck| %>
+      <tr>
+        <th><%= radcheck.username %></th>
+        <th><%= radcheck.attr  %>:
+            <%= radcheck.value %></th>
+        <td><%= link_to 'Edit', edit_radcheck_path(radcheck) %></td>
+        <td><%= link_to 'Destroy', radcheck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Radius user', new_radcheck_path %>
